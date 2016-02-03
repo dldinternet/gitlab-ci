@@ -10,8 +10,6 @@ end
 
 require 'rake'
 
-require "bundler/gem_tasks"
-
 require 'rubygems/tasks'
 Gem::Tasks.new
 
