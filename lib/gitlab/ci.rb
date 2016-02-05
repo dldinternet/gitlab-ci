@@ -12,7 +12,7 @@ module Gitlab
 		#
 		# @return [Gitlab::Client]
 		def self.client(options={})
-			Gitlab::Client.new(options)
+			Gitlab::CI::Client.new(options)
 		end
 
 		# Delegate to Gitlab::Client
