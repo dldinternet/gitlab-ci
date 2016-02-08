@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    gitlab_ci (0.2.0)
+    gitlab_ci (0.2.2)
       gitlab (~> 3.6, >= 3.6.2)
 
 GEM

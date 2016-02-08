@@ -41,11 +41,12 @@ class Gitlab::CI::Client
     #
     # @param  [String] name (required) - The name of the project
     # @param  [String] gitlab_id (required) - The ID of the project on the GitLab instance
+    # @param  [String] path (required) - The gitlab project path
+    # @param  [String] ssh_url_to_repo (required) - The gitlab SSH url to the repo
     # @param  [String] default_ref (optional) - The branch to run on (default to master)
     # @return [Gitlab::ObjectifiedHash] Information about created project.
-    def create_project(name, id, ref='master')
-      url = "/projects"
-      post(url, body: { name: name, gitlab_id: id, default_ref: ref })
+    def create_project(name, gitlab_id, path, ssh_url_to_repo, default_ref='master')
+      post('/projects', body: { name: name, gitlab_id: gitlab_id, path: path, ssh_url_to_repo: ssh_url_to_repo, default_ref: default_ref })
     end
 
     # Updates a GitLab CI project using GitLab project details that the authenticated user has access to.
